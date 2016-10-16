@@ -1,10 +1,9 @@
 require 'bundler'
 Bundler.require
+require './colors'
 
 class Sample
-  COLORS = Rainbow::X11ColorNames::NAMES.keys.delete_if do |v|
-    [:darkslategray, :black, :white].include? v
-  end
+  include Colors
 
   def log(n, msg)
     pid = Process.pid
